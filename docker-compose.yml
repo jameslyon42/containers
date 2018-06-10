@@ -29,6 +29,7 @@ services:
   db:
     build: images/db/
     image: jameslyon42/gof_db
+    command: --port=5123
     container_name: gof_db
     ports:
       - "5123:5123"
