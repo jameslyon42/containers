@@ -4,10 +4,14 @@ RUN apt-get update && apt-get install -y \
 	apt-transport-https \
 	lsb-release \
 	ca-certificates \
-	wget
+	wget \
+	curl \
+	gnupg2
 
 RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg && \
 	sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
+
+RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
 
 RUN apt-get update && apt-get install -y \
 	php7.2-fpm \
@@ -16,10 +20,13 @@ RUN apt-get update && apt-get install -y \
 	php7.2-mbstring \
 	php7.2-xml \
 	composer \
-	curl \
 	zip \
 	unzip \
-	supervisor
+	supervisor \
+	npm \
+	libpng-dev \
+	make \
+	gcc
 
 RUN sed -i 's/\/run\/php\/php7.2-fpm.sock/0.0.0.0:9000/' /etc/php/7.2/fpm/pool.d/www.conf
 
