@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y \
 	php7.2-mysql \
 	php7.2-mbstring \
 	php7.2-xml \
+	php-xdebug \
 	composer \
 	zip \
 	unzip \
