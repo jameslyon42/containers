@@ -35,5 +35,7 @@ RUN mkdir -p /var/www/
 
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+WORKDIR /var/www
+
 EXPOSE 9000
 CMD ["/usr/bin/supervisord"]
