@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir /var/www/public
 
 ADD vhost.conf /etc/nginx/sites-available/default
+ADD default.conf /etc/nginx/conf.d/default.conf
 
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
